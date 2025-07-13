@@ -92,7 +92,7 @@ const CategoryContent = forwardRef(({ item }, ref) => {
             setStatus('completed');
             // AsyncStorage.setItem('completedItems', JSON.stringify([...completedItems, {id: nanoid(), name: item.name, completedAt: new Date().toISOString()}])).then(_ =>{})
             if(status == 'running') {
-                dispatch(addCompletedItems({completedItems: [...completedItems, {id: nanoid(), name: item.name, completedAt: new Date().toISOString()}]}));
+                dispatch(addCompletedItems({completedItems: [...completedItems, {id: nanoid(), name: item.name, completedAt: new Date().toISOString(), categoryId: item.categoryId }]}));
                 setOpen(true);
                 setTimeout(() => {
                     setOpen(false);
